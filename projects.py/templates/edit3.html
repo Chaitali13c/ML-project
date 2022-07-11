@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Simple Website Template with Sticky Sidebar</title>
+    <meta name="description" content="Free responsive website HTML theme with sticky sidebar for both desktop and mobile. ">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+<body>
+<header>
+   
+	<div id="header">
+		<div class="socialButtons">
+			<a class="facebook" href="https://www.facebook.com/htmlcoding">f</a>
+			<a class="linkedin" href="https://www.linkedin.com/in/ferencdenes/">in</a>
+			<a class="youtube" href="https://www.youtube.com/channel/UCn38Jw1sJzbjVHO95Zp0Sww/videos">&#128898;</a>
+			<a class="twitter" href="https://twitter.com/RuwixCube">
+			
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+
+</svg>
+			
+			</a>
+		</div>
+		<div id="mobileMenuToggle" title="Menu">M</div>
+		<a href="/" id="mobileLogo"></a>
+		<div id="headerLeft">
+			<div id="menuToggle">&equiv;</div>
+		</div>
+		<div id="headerRight">
+			<nav>  
+				<ul>
+					     <li><a href="{{url_for('index')}}">Home</a>
+					     <li><a href="{{url_for('about')}}">About</a>
+						 <li><a href="{{url_for('contact')}}">Contact</a>
+						 <li><a href="{{url_for('allusers')}}">Allusers</a>
+						 <li><a href="{{url_for('search')}}">Search Users</a>
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+<div id="wrapall">
+	<div id="sidebar">
+		<div id="stickThis">
+			
+		<div id="stick-here"></div>
+	</div>
+	<br><br><br>
+	<section>
+	{{row}}
+	<form method="POST" action="{{url_for('update')}}">
+	    
+		<input type="hidden" name="uid" value="{{row[0]}}"/>
+		
+        <label for="uname">medicine_name</label>
+		<input type="text" name="uname" id="uname" value="{{row[1]}}"/><br><br><br>
+		
+		 <label for="pwd">price</label>
+		 <input type="number" name="pwd" id="pwd" value="{{row[2]}}"/><br><br><br>
+		
+		 <label for="available_stocks">available_stocks</label>
+		 <input type="number" name="available_stocks" id="available_stocks" value="{{row[3]}}"/><br><br><br>
+		 
+		 <input type="submit" name="updateuser"  value="update_user"/>
+		 
+		 
+	</form>
+	
+		</section>
+	<div id="main">
+		<section id="page">
+			<main>
+			<head>
+		      <style>
+			  table,th,td{
+			  border:1px solid black;
+			  }</style>
+			  </head>
+				<article>
+					<h1>THIS IS EDIT PAGE</h1><br><br>
+					<a href="https://www.paypal.com/paypalme/ruwix" target="_blank">donate through PayPal</a>.</strong></p>
+				</article>
+				<table border="5" width="600">
+				
+				<tr> 
+				    <th>medicine_name</th>
+				    <th>price</th>
+				    <th>available_stocks</th>
+					<th colspan="2">Action</th>
+				</tr>	
+				{% for row in userdata %}
+				<tr align="center">
+				    <td>{{row[1]}}</td>
+				    <td>{{row[2]}}</td>
+				    <td>{{row[3]}}</td>
+					<td><a href="{{url_for('edit',id=row[0])}}">Edit</a></td>
+					<td><a href="{{url_for('delete',id=row[0])}}">Delete</a></td>
+					
+				
+				</tr>
+				{% endfor %}
+				</table>
+			</main>			
+			<br><br>
+		</section>
+	</div>
+</div>
+</body>
+</html>  

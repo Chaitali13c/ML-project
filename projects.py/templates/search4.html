@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Simple Website Template with Sticky Sidebar</title>
+    <meta name="description" content="Free responsive website HTML theme with sticky sidebar for both desktop and mobile. ">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+<body>
+<header>
+   
+	<div id="header">
+		<div class="socialButtons">
+			<a class="facebook" href="https://www.facebook.com/htmlcoding">f</a>
+			<a class="linkedin" href="https://www.linkedin.com/in/ferencdenes/">in</a>
+			<a class="youtube" href="https://www.youtube.com/channel/UCn38Jw1sJzbjVHO95Zp0Sww/videos">&#128898;</a>
+			<a class="twitter" href="https://twitter.com/RuwixCube">
+			
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+
+</svg>
+			
+			</a>
+		</div>
+		<div id="mobileMenuToggle" title="Menu">M</div>
+		<a href="/" id="mobileLogo"></a>
+		<div id="headerLeft">
+			<div id="menuToggle">&equiv;</div>
+		</div>
+		<div id="headerRight">
+			<nav>  
+				<ul>
+					     <li><a href="{{url_for('index')}}">Home</a>
+					     <li><a href="{{url_for('about')}}">About</a>
+					     <li><a href="{{url_for('contact')}}">Contact</a>
+						 <li><a href="{{url_for('allusers')}}">Allusers</a>
+						 <li><a href="{{url_for('search')}}">Search Users</a>
+						             
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+	<section>    
+	<br><br><br><br>
+	     <h1><strong>THIS IS SEARCH PAGE</strong><h2>
+	</section>
+	<section>
+	
+	                        <body>
+
+                               <p>
+                                    <img src="../static/logo5.png">
+                                 </p>
+                            <body>
+							
+							
+	          <br><br><br>
+	    <form method="POST" action="{{url_for('getdata')}}">		
+		   <lable for="uname">MEDICINE NAME</label>
+		   <input type="text" name="uname" id="uname"/>
+		   
+		   <input type="submit" name="searchuser" value="Serch User"/>
+		
+	<br><br><br>
+	</section>
+	
+	<section id="pageContent">
+		<main role="main">
+		
+        {% for item in row %}
+		  <tr align="center">
+		    <td>{{item}}</td>
+		    <br><br>
+		<tr>
+		{% endfor %}
+			
+		</main>
+		<br> 
+		<aside>
+			                
+		</aside>
+	</section>
+	<br>
+                 <footer>
+		            <p>&copy; You can copy, edit and publish this template but please leave a link to our website | <a href="https://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a></p>
+		           <address>
+		        	Contact: <a href="mailto:me@example.com">Mail me</a>
+		          </address>
+               	</footer>
+
+
+</body>
+
+</html>	
